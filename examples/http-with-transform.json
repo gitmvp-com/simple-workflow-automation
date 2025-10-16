@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "fetch-users",
+      "type": "httpRequest",
+      "parameters": {
+        "url": "https://jsonplaceholder.typicode.com/users",
+        "method": "GET"
+      }
+    },
+    {
+      "id": "transform-data",
+      "type": "set",
+      "parameters": {
+        "values": {
+          "title": "={{$json[0].name}}",
+          "email": "={{$json[0].email}}",
+          "company": "={{$json[0].company.name}}"
+        }
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "fetch-users",
+      "to": "transform-data"
+    }
+  ]
+}
