@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "fetch-data",
+      "type": "httpRequest",
+      "parameters": {
+        "url": "https://jsonplaceholder.typicode.com/posts/1",
+        "method": "GET"
+      }
+    }
+  ],
+  "connections": []
+}
