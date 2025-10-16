@@ -1,0 +1,25 @@
+{
+  "nodes": [
+    {
+      "id": "fetch-posts",
+      "type": "httpRequest",
+      "parameters": {
+        "url": "https://jsonplaceholder.typicode.com/posts",
+        "method": "GET"
+      }
+    },
+    {
+      "id": "process-posts",
+      "type": "code",
+      "parameters": {
+        "code": "return items.slice(0, 5).map(post => ({ id: post.id, title: post.title.toUpperCase(), length: post.body.length }));"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "fetch-posts",
+      "to": "process-posts"
+    }
+  ]
+}
