@@ -1,0 +1,30 @@
+{
+  "nodes": [
+    {
+      "id": "get-bitcoin-price",
+      "type": "httpRequest",
+      "parameters": {
+        "url": "https://api.coindesk.com/v1/bpi/currentprice.json",
+        "method": "GET"
+      }
+    },
+    {
+      "id": "format-price",
+      "type": "set",
+      "parameters": {
+        "values": {
+          "currency": "USD",
+          "rate": "={{$json.bpi.USD.rate}}",
+          "description": "={{$json.bpi.USD.description}}",
+          "timestamp": "={{$json.time.updated}}"
+        }
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "get-bitcoin-price",
+      "to": "format-price"
+    }
+  ]
+}
