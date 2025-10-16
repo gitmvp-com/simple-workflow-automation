@@ -1,0 +1,37 @@
+{
+  "name": "simple-workflow-automation",
+  "version": "1.0.0",
+  "description": "Simplified MVP version of n8n - Execute basic workflow automation",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "workflow",
+    "automation",
+    "n8n",
+    "mvp"
+  ],
+  "engines": {
+    "node": ">=20.19"
+  },
+  "dependencies": {
+    "axios": "1.12.0",
+    "express": "5.1.0",
+    "lodash": "4.17.21",
+    "uuid": "10.0.0",
+    "zod": "3.25.67"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/lodash": "4.17.17",
+    "@types/node": "^20.17.50",
+    "@types/uuid": "^10.0.0",
+    "tsx": "^4.19.3",
+    "typescript": "5.9.2"
+  }
+}
